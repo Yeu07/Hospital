@@ -16,7 +16,7 @@ namespace Modelo.Modelos
     {
         [Required]
         [StringLength(8)]
-        public decimal dni { get; set; }
+        public string dni { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -31,7 +31,7 @@ namespace Modelo.Modelos
         public string direccion { get; set; }
         [Required]
         [StringLength(10)]
-        public decimal celular { get; set; }
+        public string celular { get; set; }
 
         [Required]
         [StringLength(50)]

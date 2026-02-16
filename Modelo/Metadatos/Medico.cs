@@ -17,7 +17,7 @@ namespace Modelo.Modelos
         // Defino validaciones a realizar sobre cada campo
         [Required]
         [StringLength(8)]
-        public decimal dni { get; set; }
+        public string dni { get; set; }
 
         [Required]
         [StringLength(50)]

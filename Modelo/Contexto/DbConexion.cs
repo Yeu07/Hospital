@@ -10,6 +10,11 @@ namespace Modelo.Modelos
     public partial class DbConexion : DbContext
     {
 
+        public virtual DbSet<Medico> Medico { get; set; }
+        public virtual DbSet<Paciente> Paciente { get; set; }
+        public virtual DbSet<Ingreso> Ingreso { get; set; }
+        public virtual DbSet<Egreso> Egreso { get; set; }
+
         // constructor privado el cual usa el constructor de la clase base DbContext
         private DbConexion(string connectionString)
             : base(connectionString)
