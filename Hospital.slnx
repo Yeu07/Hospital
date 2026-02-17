@@ -1,20 +1,20 @@
 <Solution>
   <Folder Name="/01 - Comun/">
-    <Project Path="Comun/Comun.csproj" />
+    <Project Path="Comun/Comun.csproj" Id="277968ff-d2b7-486c-91b0-27fbc86d3bd7" />
   </Folder>
   <Folder Name="/02 - Modelo/">
-    <Project Path="Modelo/Modelo.csproj" />
+    <Project Path="Modelo/Modelo.csproj" Id="c10ab5a4-1534-400e-b08b-50061204d159" />
   </Folder>
   <Folder Name="/03 - Acceso a Datos/">
-    <Project Path="Datos/Datos.csproj" />
+    <Project Path="Datos/Datos.csproj" Id="aae9638e-c3c7-4e6f-8ffd-8d04c28336d2" />
   </Folder>
   <Folder Name="/04 - Cliente REST/">
-    <Project Path="REST/REST.csproj" />
+    <Project Path="REST/REST.csproj" Id="33e4ef37-089a-46b0-9c3b-86a5a578cf7f" />
   </Folder>
   <Folder Name="/05 - Logica de Negocio/">
-    <Project Path="Logica/Logica.csproj" />
+    <Project Path="Logica/Logica.csproj" Id="53e26503-e04b-44f8-8925-29d4eb8d0257" />
   </Folder>
   <Folder Name="/06 - Web API/">
-    <Project Path="WebAPI/WebAPI.csproj" />
+    <Project Path="WebAPI/WebAPI.csproj" Id="7a88bd13-6361-474b-a288-c080b9d00b65" />
   </Folder>
 </Solution>

@@ -14,7 +14,7 @@ namespace Logica.BLL
 
         public static ListadoPaginadoVMR<PacienteVMR> LeerTodo(int cantidad, int pagina, string textoBusqueda)
         {
-            return PacienteDAL.LeerTodo(cantidad, pagina, textoBusqueda)
+            return PacienteDAL.LeerTodo(cantidad, pagina, textoBusqueda);
         }
 
         public static PacienteVMR LeerUno(long id)

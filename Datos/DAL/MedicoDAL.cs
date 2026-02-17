@@ -20,7 +20,8 @@ namespace Datos.DAL
                 {
                     id = x.id,
                     dni = x.dni,
-                    nombre = x.nombre + " " + x.apellido,
+                    nombre = x.nombre,
+                    apellido = x.apellido,
                     esEspecialista = x.esEspecialista,
                 });
 
@@ -64,7 +65,6 @@ namespace Datos.DAL
         }
         public static long Crear(Medico item)
         {
-            long id = 0;
 
             using (var db = DbConexion.Create())
             {
@@ -73,7 +73,7 @@ namespace Datos.DAL
                 db.SaveChanges();
             }
 
-            return id;
+            return item.id;
         }
         public static void Actualizar(MedicoVMR item)
         {

@@ -64,7 +64,6 @@ namespace Datos.DAL
         }
         public static long Crear(Egreso item)
         {
-            long id = 0;
 
             using (var db = DbConexion.Create())
             {
@@ -73,7 +72,7 @@ namespace Datos.DAL
                 db.SaveChanges();
             }
 
-            return id;
+            return item.id;
         }
         public static void Actualizar(EgresoVMR item)
         {
