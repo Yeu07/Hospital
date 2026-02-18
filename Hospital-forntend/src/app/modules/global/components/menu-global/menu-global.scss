@@ -1,0 +1,14 @@
+.toolbar-primario {
+  background-color: var(--mat-sys-primary) !important;
+  
+  color: var(--mat-sys-on-primary) !important;
+}
+
+.toolbar-primario mat-icon, 
+.toolbar-primario button {
+  color: inherit !important;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
