@@ -28,7 +28,7 @@ namespace Datos.DAL
                 if (!string.IsNullOrEmpty(textoBusqueda))
                 {
 
-                    query = query.Where(x => x.nombre.Contains(textoBusqueda));
+                    query = query.Where(x => x.nombre.Contains(textoBusqueda) || x.dni.Contains(textoBusqueda) || x.apellido.Contains(textoBusqueda)  );
                 }
 
                 resultado.cantidadTotal = query.Count();
