@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../../services/http.service';
 import { GlobalModule } from "../../../global/global-module";
 import { MatTableDataSource } from '@angular/material/table';
+import { MatTooltip } from "@angular/material/tooltip";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-index',
-  imports: [GlobalModule],
+  imports: [GlobalModule, MatTooltip],
   templateUrl: './index.html',
   styleUrl: './index.scss',
 })
@@ -24,7 +26,7 @@ export class Index implements OnInit {
   textoBusqueda = "";
 
 
-  constructor(private httpService:HttpService){}
+  constructor(private httpService:HttpService, private toastr:ToastrService){}
 
   ngOnInit(): void {
     this.LeerTodo()
@@ -41,5 +43,19 @@ export class Index implements OnInit {
     this.numeroDePagina = event.pageIndex;
 
     this.LeerTodo();
+  }
+
+  eliminar(medicoId: number){
+    let confirmacion = confirm('Estas seguro/a que desea eliminar el elemento?');
+
+    if(confirmacion){
+      let ids = [medicoId];
+
+      this.httpService.Eliminar(ids)
+        .subscribe((resppuesta: any) => {
+          this.toastr.success('Elemento eliminado satisfactoriamente','Confirmaacion')
+          this.LeerTodo()
+      })
+    }
   }
 }

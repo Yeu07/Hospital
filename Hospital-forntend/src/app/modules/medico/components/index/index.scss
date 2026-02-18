@@ -1,11 +1,9 @@
 mat-toolbar {
-  background: transparent !important; /* O 'white' si prefieres fondo sólido */
+  background: transparent !important;
   height: auto !important;
   min-height: 80px;
   padding: 10px 0 !important;
 }
-
-
 
 .col-6:nth-child(2) {
   display: flex !important;
@@ -21,24 +19,71 @@ mat-form-field {
   display: none !important;
 }
 
-button {
-  background-color: var(--mat-sys-primary) !important;
-  color: var(--mat-sys-on-primary) !important;
+button.btn-principal {
+  background-color: var(--mat-sys-primary) !important; 
+  color: var(--mat-sys-on-primary) !important;        
   border-radius: 8px !important;
-  border: none;
+  border: none !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px;
   padding: 0 20px !important;
-  height: 48px !important; 
+  height: 48px !important;
   cursor: pointer;
   font-weight: 500;
 }
 
-button mat-icon {
+button.btn-principal mat-icon {
+    margin: 0 !important;
+}
+
+
+.btn-eliminar {
+  background-color: transparent !important;
+  color: #d32f2f !important;             
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  cursor: pointer !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.btn-eliminar mat-icon {
+  color: #d32f2f !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 !important;
+}
+
+.btn-eliminar:hover {
+  background-color: rgba(211, 47, 47, 0.1) !important;
+  transform: scale(1.1);
+}
+
+.action-cell {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.mensaje-no-existen-datos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  line-height: 50px;
+  background: white;
+  color: #666;
+  font-style: italic;
+}
+
+.mensaje-no-existen-datos .mat-icon {
+  color: var(--mat-sys-error) !important;
+  margin-right: 8px;
 }
