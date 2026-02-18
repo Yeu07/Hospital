@@ -1,14 +1,42 @@
 .toolbar-primario {
   background-color: var(--mat-sys-primary) !important;
-  
   color: var(--mat-sys-on-primary) !important;
+  
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px; 
 }
 
-.toolbar-primario mat-icon, 
-.toolbar-primario button {
+.toolbar-primario button[matIconButton], 
+.toolbar-primario .example-icon {
+  background: transparent !important;
+  border: none !important;
   color: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer;
+  
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  width: 40px;
+  height: 40px;
+}
+
+.toolbar-primario span,
+.toolbar-primario {
+  line-height: normal !important;
+  display: flex;
+  align-items: center;
 }
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.toolbar-primario mat-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
