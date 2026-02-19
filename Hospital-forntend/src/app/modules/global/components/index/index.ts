@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { GlobalModule } from '../../global-module';
+
 
 @Component({
   selector: 'app-index',
-  imports: [MatCardModule,
-    MatIconModule,
-    RouterLink
+  imports: [
+    GlobalModule
   ],
   templateUrl: './index.html',
   styleUrl: './index.scss',

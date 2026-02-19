@@ -20,15 +20,14 @@ namespace Datos.DAL
                 {
                     id = x.id,
                     dni = x.dni,
-                    nombre = x.nombre,
-                    apellido = x.apellido,
+                    nombre = x.nombre + " " + x.apellido ,
                     esEspecialista = x.esEspecialista,
                 });
 
                 if (!string.IsNullOrEmpty(textoBusqueda))
                 {
 
-                    query = query.Where(x => x.nombre.Contains(textoBusqueda));
+                    query = query.Where(x => x.nombre.Contains(textoBusqueda) || x.dni.Contains(textoBusqueda)  );
                 }
 
                 resultado.cantidadTotal = query.Count();
