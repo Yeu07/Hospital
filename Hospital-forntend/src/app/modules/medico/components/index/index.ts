@@ -4,6 +4,8 @@ import { GlobalModule } from "../../../global/global-module";
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTooltip } from "@angular/material/tooltip";
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { Form } from '../form/form';
 
 @Component({
   selector: 'app-index',
@@ -26,7 +28,7 @@ export class Index implements OnInit {
   textoBusqueda = "";
 
 
-  constructor(private httpService:HttpService, private toastr:ToastrService){}
+  constructor(private httpService:HttpService, private toastr:ToastrService, private dialog:MatDialog){}
 
   ngOnInit(): void {
     this.LeerTodo()
@@ -57,5 +59,22 @@ export class Index implements OnInit {
           this.LeerTodo()
       })
     }
+  }
+
+  crearMedico(){
+    const dialogRef = this.dialog.open(Form, {
+      disableClose:true,
+      autoFocus:true,
+      closeOnNavigation:false,
+      position: {top: '30px'},
+      width: '700px',
+      data: {
+        tipo: 'CREAR'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

@@ -10,9 +10,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {ToastrModule} from 'ngx-toastr'
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -38,6 +41,10 @@ import {ToastrModule} from 'ngx-toastr'
       progressBar:true,
       enableHtml:true
     }),
+    MatDialogModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
 
   ],
   exports: [
@@ -52,7 +59,11 @@ import {ToastrModule} from 'ngx-toastr'
     MatPaginatorModule,
     FormsModule,
     MatTooltipModule,
-    ToastrModule
+    ToastrModule,
+    MatDialogModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
   ]
 })
 export class GlobalModule { }

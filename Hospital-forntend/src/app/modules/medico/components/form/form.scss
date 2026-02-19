@@ -1,0 +1,54 @@
+.btn-hospital {
+  /* Aumentamos el radio para lograr ese efecto redondeado de la imagen */
+  border-radius: 25px !important; 
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  /* Eliminamos cualquier rastro de bordes o sombras del navegador */
+  box-shadow: none !important;
+  outline: none !important;
+  
+  gap: 10px; /* Un poco más de espacio entre icono y texto */
+  padding: 0 24px !important; /* Más aire a los lados para el estilo píldora */
+  height: 48px !important;
+  cursor: pointer;
+  
+  /* La fuente en la imagen se ve ligeramente más gruesa */
+  font-weight: 600; 
+  font-size: 16px;
+  transition: all 0.3s ease; 
+}
+
+/* Estilo para el botón GUARDAR / CREAR (Magenta) */
+.btn-principal {
+  background-color: var(--mat-sys-primary) !important; 
+  color: var(--mat-sys-on-primary) !important;
+}
+
+/* Estilo para el botón CANCELAR (Gris claro) */
+.btn-cancelar {
+  background-color: var(--mat-sys-surface-container-high) !important;
+  color: var(--mat-sys-on-surface) !important;
+}
+
+/* Efectos de interacción */
+.btn-hospital:hover {
+  filter: brightness(1.1); /* Brilla un poco en lugar de oscurecer */
+  transform: translateY(-1px); /* Efecto sutil de elevación */
+}
+
+.btn-hospital:active {
+  transform: translateY(0px);
+  filter: brightness(0.9);
+}
+
+/* Alineación perfecta del icono */
+.btn-hospital mat-icon {
+  margin: 0 !important;
+  font-size: 22px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
