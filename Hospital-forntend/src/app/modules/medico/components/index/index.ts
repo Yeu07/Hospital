@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../../../services/httpMedico.service';
+import { HttpServiceMedico } from '../../../../services/httpMedico.service';
 import { GlobalModule } from "../../../global/global-module";
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTooltip } from "@angular/material/tooltip";
@@ -29,7 +29,7 @@ export class Index implements OnInit {
   textoBusqueda = "";
 
 
-  constructor(private httpService:HttpService, private toastr:ToastrService, private dialog:MatDialog){}
+  constructor(private httpService:HttpServiceMedico, private toastr:ToastrService, private dialog:MatDialog){}
 
   ngOnInit(): void {
     this.LeerTodo()

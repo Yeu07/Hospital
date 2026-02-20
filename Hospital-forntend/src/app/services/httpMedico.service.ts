@@ -7,7 +7,7 @@ import { Medico } from "../modules/medico/interface";
 })
 
 
-export class HttpService{
+export class HttpServiceMedico{
 
     constructor(private httpCliente: HttpClient){
         
