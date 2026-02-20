@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { GlobalModule } from '../../../global/global-module';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpService } from '../../../../services/http.service';
+import { HttpService } from '../../../../services/httpMedico.service';
 import { ToastrService } from 'ngx-toastr';
 import { Medico } from '../../interface';
 

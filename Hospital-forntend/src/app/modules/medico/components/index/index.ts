@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../../../services/http.service';
+import { HttpService } from '../../../../services/httpMedico.service';
 import { GlobalModule } from "../../../global/global-module";
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTooltip } from "@angular/material/tooltip";
