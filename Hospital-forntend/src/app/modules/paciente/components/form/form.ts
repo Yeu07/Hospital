@@ -2,9 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { GlobalModule } from '../../../global/global-module';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpServiceMedico } from '../../../../services/httpMedico.service';
+import { HttpServicePaciente } from '../../../../services/httpPaciente.service';
 import { ToastrService } from 'ngx-toastr';
-import { Medico } from '../../interfaceMedico';
+import { Paciente } from '../../interfacePaciente';
 
 @Component({
   selector: 'app-form',
@@ -19,7 +19,7 @@ export class Form implements OnInit {
   data = inject(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<Form>);
 
-  constructor(private fb: FormBuilder, private httpService:HttpServiceMedico, private toastr:ToastrService){
+  constructor(private fb: FormBuilder, private httpService:HttpServicePaciente, private toastr:ToastrService){
   }
 
   ngOnInit(): void {
@@ -37,16 +37,17 @@ export class Form implements OnInit {
 
     if(this.data.tipo == "CREAR"){
 
-      const medico: Medico = {
+      const paciente: Paciente = {
         id: 0,
         dni: values.dni,
         nombre: values.nombre,
         apellido: values.apellido,
-        habilitado: values.habilitado, 
-        esEspecialista: values.esEspecialista
+        direccion:values.direccion,
+        correo:values.correo,
+        celular:values.celular
       };
 
-      this.httpService.Crear(medico)
+      this.httpService.Crear(paciente)
       .subscribe({
         next: (idCreado: number) => {
           this.toastr.success('Elemento creado satisfactoriamente', 'Confirmación');
@@ -58,16 +59,17 @@ export class Form implements OnInit {
         }
       });
     }else{
-      const medico: Medico = {
-        id: this.data.medico.id,
+      const paciente: Paciente = {
+        id: this.data.paciente.id,
         dni: values.dni,
         nombre: values.nombre,
         apellido: values.apellido,
-        habilitado: values.habilitado, 
-        esEspecialista: values.esEspecialista
+        direccion:values.direccion,
+        correo:values.correo,
+        celular:values.celular
       };
 
-      this.httpService.Editar(medico)
+      this.httpService.Editar(paciente)
       .subscribe({
         next: (idCreado: number) => {
           this.toastr.success('Elemento creado satisfactoriamente', 'Confirmación');
@@ -87,17 +89,21 @@ export class Form implements OnInit {
         dni:[{value:null, disabled:false}, [Validators.required]],
         nombre:[{value:null, disabled:false}, [Validators.required]],
         apellido:[{value:null, disabled:false}, [Validators.required]],
-        esEspecialista:[{value:false, disabled:false}, [Validators.required]] ,
-        habilitado:[{value:true, disabled:false}, [Validators.required]]
+        direccion:[{value:null, disabled:false}, [Validators.required]],
+        correo:[{value:null, disabled:false}, [Validators.required]],
+        celular:[{value:null, disabled:false}, [Validators.required]],
+        
       });
     }
     else{
       this.formGroup = this.fb.group({
-        dni:[{value:this.data.medico.dni, disabled:false}, [Validators.required]],
-        nombre:[{value:this.data.medico.nombre, disabled:false}, [Validators.required]],
-        apellido:[{value:this.data.medico.apellido, disabled:false}, [Validators.required]],
-        esEspecialista:[{value:this.data.medico.esEspecialista, disabled:false}, [Validators.required]] ,
-        habilitado:[{value:this.data.medico.habilitado, disabled:false}, [Validators.required]]
+        dni:[{value:this.data.paciente.dni, disabled:false}, [Validators.required]],
+        nombre:[{value:this.data.paciente.nombre, disabled:false}, [Validators.required]],
+        apellido:[{value:this.data.paciente.apellido, disabled:false}, [Validators.required]],
+        direccion:[{value:this.data.paciente.direccion, disabled:false}, [Validators.required]],
+        correo:[{value:this.data.paciente.correo, disabled:false}, [Validators.required]],
+        celular:[{value:this.data.paciente.celular, disabled:false}, [Validators.required]],
+        
       });
     }
 

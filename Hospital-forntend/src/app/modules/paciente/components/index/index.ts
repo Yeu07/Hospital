@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpServiceMedico } from '../../../../services/httpMedico.service';
+import { HttpServicePaciente } from '../../../../services/httpPaciente.service';
 import { GlobalModule } from "../../../global/global-module";
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTooltip } from "@angular/material/tooltip";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { Form } from '../form/form';
-import { Medico } from '../../interfaceMedico';
+import { Paciente } from '../../interfacePaciente';
 
 @Component({
   selector: 'app-index',
@@ -18,7 +18,7 @@ import { Medico } from '../../interfaceMedico';
 export class Index implements OnInit {
 
   
-  displayedColumns: string[] = ['DNI', 'Nombre','Apellido', 'Especialista', 'Acciones'];
+  displayedColumns: string[] = ['DNI', 'Nombre','Apellido', 'Direccion','Celular','Correo', 'Acciones'];
   dataSource = new MatTableDataSource<any>([]);
 
   cantidadTotal = 0;
@@ -29,7 +29,7 @@ export class Index implements OnInit {
   textoBusqueda = "";
 
 
-  constructor(private httpService:HttpServiceMedico, private toastr:ToastrService, private dialog:MatDialog){}
+  constructor(private httpService:HttpServicePaciente, private toastr:ToastrService, private dialog:MatDialog){}
 
   ngOnInit(): void {
     this.LeerTodo()
@@ -48,11 +48,11 @@ export class Index implements OnInit {
     this.LeerTodo();
   }
 
-  eliminar(medicoId: number){
+  eliminar(pacienteId: number){
     let confirmacion = confirm('Estas seguro/a que desea eliminar el elemento?');
 
     if(confirmacion){
-      let ids = [medicoId];
+      let ids = [pacienteId];
 
       this.httpService.Eliminar(ids)
         .subscribe((resppuesta: any) => {
@@ -62,7 +62,7 @@ export class Index implements OnInit {
     }
   }
 
-  crearMedico(){
+  crearPaciente(){
     const dialogRef = this.dialog.open(Form, {
       disableClose:true,
       autoFocus:true,
@@ -81,7 +81,7 @@ export class Index implements OnInit {
     });
   }
 
-  editarMedico(medico: Medico){
+  editarPaciente(paciente: Paciente){
     const dialogRef = this.dialog.open(Form, {
       disableClose:true,
       autoFocus:true,
@@ -90,7 +90,7 @@ export class Index implements OnInit {
       width: '700px',
       data: {
         tipo: 'EDITAR',
-        medico: medico
+        paciente: paciente
       }
     });
 

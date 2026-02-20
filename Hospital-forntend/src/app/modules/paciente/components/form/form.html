@@ -1,17 +1,11 @@
 <h2 mat-dialog-title>
-    {{ data.tipo == 'EDITAR' ? 'Modificar Datos del' : 'Registrar Nuevo' }} Medico
+    {{ data.tipo === 'EDITAR' ? 'Modificar Datos del' : 'Registrar Nuevo' }} Paciente
 </h2>
 
 <mat-dialog-content>
     <form [formGroup]="formGroup">
         <div class="class-fluid">
             <div class="row">
-                <div class="col-12">
-                    <mat-radio-group formControlName="habilitado" name="habilitado">
-                        <mat-radio-button [value]="true">Habilitado</mat-radio-button>
-                        <mat-radio-button [value]="false">Inhabilitado</mat-radio-button>
-                     </mat-radio-group>
-                </div>
                 <div class="col-6">
                     <mat-form-field  name="dni" class="example-form-field">
                         <mat-label>DNI</mat-label>
@@ -30,12 +24,24 @@
                         <input formControlName="apellido" matInput type="text">
                     </mat-form-field>
                 </div>
-                <div class="col-8">
-                    <mat-slide-toggle formControlName="esEspecialista" name="esEspecialista">
-                        Es especialista
-                    </mat-slide-toggle>
+                <div class="col-6">
+                    <mat-form-field name="direccion" class="example-form-field">
+                        <mat-label>Direccion</mat-label>
+                        <input formControlName="direccion" matInput type="text">
+                    </mat-form-field>
                 </div>
-                
+                <div class="col-6">
+                    <mat-form-field name="celular" class="example-form-field">
+                        <mat-label>Celular</mat-label>
+                        <input formControlName="celular" matInput type="text">
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field name="correo" class="example-form-field">
+                        <mat-label>Correo</mat-label>
+                        <input formControlName="correo" matInput type="text">
+                    </mat-form-field>
+                </div>
             </div>
         </div>
     </form>

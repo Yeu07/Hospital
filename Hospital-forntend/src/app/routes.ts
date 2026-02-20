@@ -1,8 +1,10 @@
 import { Routes } from "@angular/router";
 import { globalRoutes } from "./modules/global/global.routing";
 import { medicoRoutes } from "./modules/medico/medico.routes";
+import { pacienteRoutes } from "./modules/paciente/paciente.routes";
 
 export const RUTAS: Routes = [
     ...globalRoutes,
-    ...medicoRoutes
+    ...medicoRoutes,
+    ...pacienteRoutes
 ];
