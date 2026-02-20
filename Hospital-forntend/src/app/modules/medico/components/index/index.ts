@@ -6,6 +6,7 @@ import { MatTooltip } from "@angular/material/tooltip";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { Form } from '../form/form';
+import { Medico } from '../../interface';
 
 @Component({
   selector: 'app-index',
@@ -17,7 +18,7 @@ import { Form } from '../form/form';
 export class Index implements OnInit {
 
   
-  displayedColumns: string[] = ['DNI', 'Nombre', 'Especialista', 'Acciones'];
+  displayedColumns: string[] = ['DNI', 'Nombre','Apellido', 'Especialista', 'Acciones'];
   dataSource = new MatTableDataSource<any>([]);
 
   cantidadTotal = 0;
@@ -74,7 +75,29 @@ export class Index implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      if (result != null){
+        this.LeerTodo();
+      }
+    });
+  }
+
+  editarMedico(medico: Medico){
+    const dialogRef = this.dialog.open(Form, {
+      disableClose:true,
+      autoFocus:true,
+      closeOnNavigation:false,
+      position: {top: '30px'},
+      width: '700px',
+      data: {
+        tipo: 'EDITAR',
+        medico: medico
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.LeerTodo();
+      }
     });
   }
 }

@@ -1,4 +1,6 @@
-<h2 mat-dialog-title>Crear Medico</h2>
+<h2 mat-dialog-title>
+    {{ data.tipo === 'Editar' ? 'Modificar Datos del' : 'Registrar Nuevo' }} Medico
+</h2>
 
 <mat-dialog-content>
     <form [formGroup]="formGroup">
@@ -11,21 +13,21 @@
                      </mat-radio-group>
                 </div>
                 <div class="col-6">
-                    <mat-form-field formControlName="dni" name="dni" class="example-form-field">
+                    <mat-form-field  name="dni" class="example-form-field">
                         <mat-label>DNI</mat-label>
-                        <input matInput type="text">
+                        <input formControlName="dni" matInput type="text">
                     </mat-form-field>
                 </div>
                 <div class="col-6">
-                    <mat-form-field formControlName="nombre" name="nombre" class="example-form-field">
+                    <mat-form-field  name="nombre" class="example-form-field">
                         <mat-label>Nombre</mat-label>
-                        <input matInput type="text">
+                        <input formControlName="nombre" matInput type="text">
                     </mat-form-field>
                 </div>
                 <div class="col-6">
-                    <mat-form-field formControlName="apellido" name="apellido" class="example-form-field">
+                    <mat-form-field name="apellido" class="example-form-field">
                         <mat-label>Apellido</mat-label>
-                        <input matInput type="text">
+                        <input formControlName="apellido" matInput type="text">
                     </mat-form-field>
                 </div>
                 <div class="col-8">

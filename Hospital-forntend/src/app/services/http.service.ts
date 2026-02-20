@@ -1,9 +1,12 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Medico } from "../modules/medico/interface";
 
 @Injectable({
     providedIn: 'root'
 })
+
+
 export class HttpService{
 
     constructor(private httpCliente: HttpClient){
@@ -30,5 +33,13 @@ export class HttpService{
         }
 
         return this.httpCliente.delete('https://localhost:44372/api/medico', option)
+    }
+
+    Crear(medico: Medico){
+        return this.httpCliente.post<number>('https://localhost:44372/api/medico',medico)
+    }
+
+    Editar(medico:Medico){
+        return this.httpCliente.put<number>('https://localhost:44372/api/medico/'+medico.id,medico)
     }
 }
