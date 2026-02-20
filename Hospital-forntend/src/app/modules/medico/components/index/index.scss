@@ -1,3 +1,4 @@
+/* --- TOOLBAR Y BUSCADOR --- */
 mat-toolbar {
   background: transparent !important;
   height: auto !important;
@@ -19,9 +20,10 @@ mat-form-field {
   display: none !important;
 }
 
+/* --- BOTÓN PRINCIPAL (CREAR) --- */
 button.btn-principal {
   background-color: var(--mat-sys-primary) !important; 
-  color: var(--mat-sys-on-primary) !important;        
+  color: var(--mat-sys-on-primary) !important;         
   border-radius: 8px !important;
   border: none !important;
   display: inline-flex !important;
@@ -32,16 +34,16 @@ button.btn-principal {
   height: 48px !important;
   cursor: pointer;
   font-weight: 500;
+  transition: all 0.2s;
 }
 
-button.btn-principal mat-icon {
-    margin: 0 !important;
+button.btn-principal:hover {
+  filter: brightness(0.9);
 }
 
-
-.btn-eliminar {
+/* --- BOTONES DE ACCIÓN EN TABLA (BASE) --- */
+.btn-icono-tabla {
   background-color: transparent !important;
-  color: #d32f2f !important;             
   width: 40px !important;
   height: 40px !important;
   min-width: 40px !important;
@@ -50,26 +52,50 @@ button.btn-principal mat-icon {
   justify-content: center !important;
   border: none !important;
   cursor: pointer !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  transition: all 0.2s ease;
 }
 
-.btn-eliminar mat-icon {
-  color: #d32f2f !important;
+.btn-icono-tabla mat-icon {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 !important;
 }
 
-.btn-eliminar:hover {
-  background-color: rgba(211, 47, 47, 0.1) !important;
+.btn-icono-tabla:hover {
   transform: scale(1.1);
 }
 
+/* --- COLORES ESPECÍFICOS --- */
+
+/* ELIMINAR (Rojo) */
+.btn-eliminar {
+  color: #d32f2f !important;
+}
+.btn-eliminar mat-icon { color: #d32f2f !important; }
+.btn-eliminar:hover { background-color: rgba(211, 47, 47, 0.1) !important; }
+
+/* EDITAR (Color Primario) */
+.btn-editar {
+  /* Usamos primary en lugar de on-primary porque on-primary suele ser blanco */
+  color: var(--mat-sys-primary) !important; 
+}
+.btn-editar mat-icon { color: var(--mat-sys-primary) !important; }
+.btn-editar:hover { background-color: rgba(0, 0, 0, 0.05) !important; }
+
+/* --- TABLA Y MENSAJES --- */
 .action-cell {
   text-align: center !important;
   vertical-align: middle !important;
+}
+
+.fila-interactiva {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fila-interactiva:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .mensaje-no-existen-datos {
