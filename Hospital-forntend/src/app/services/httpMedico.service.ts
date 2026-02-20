@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Medico } from "../modules/medico/interface";
+import { Medico } from "../modules/medico/interfaceMedico";
 
 @Injectable({
     providedIn: 'root'

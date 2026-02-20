@@ -6,7 +6,7 @@ import { MatTooltip } from "@angular/material/tooltip";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { Form } from '../form/form';
-import { Medico } from '../../interface';
+import { Medico } from '../../interfaceMedico';
 
 @Component({
   selector: 'app-index',
