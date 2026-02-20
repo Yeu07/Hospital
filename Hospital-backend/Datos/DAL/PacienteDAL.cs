@@ -21,7 +21,8 @@ namespace Datos.DAL
                 {
                     id = x.id,
                     dni = x.dni,
-                    nombre = x.nombre + " " + x.apellido,
+                    nombre = x.nombre,
+                    apellido = x.apellido,
                     direccion = x.direccion,
                     celular = x.celular,
                     correo = x.correo,
